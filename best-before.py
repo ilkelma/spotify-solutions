@@ -13,32 +13,33 @@ def parseInput(line):
 	#ci = int(c)
 	
 	# Check for obvious illegality
-	if ai > 12 and bi > 12 and ci > 12
-		return outputFormat(datetime.date(ai, bi, ci), line, True)
+	#if ai > 12 and bi > 12 and ci > 12
+	#	return outputFormat(datetime.date(ai, bi, ci), line, True)
 	
-	# put these in a map
-	dateList0 = [ai,bi,ci]
-	dateList1 = [bi,ci,ai]
-	dateList2 = [ci,bi,ai]
-	dateList3 = [bi,ai,ci]
-	dateList4 = [ci,ai,bi]
-	dateList5 = [ai,ci,bi]
+	# Create list of all possible permutations
+	dateList = list()
+	dateList.append([ai,bi,ci])
+	dateList.append([bi,ci,ai])
+	dateList.append([ci,bi,ai])
+	dateList.append([bi,ai,ci])
+	dateList.append([ci,ai,bi])
+	dateList.append([ai,ci,bi])
 	
-	# We know there can only be one year
-	# if the dataset were more ambiguous
-	# a different solution would be better
-	if len(a) > 2:
-		year = a
-	elif len(b) > 2:
-		year = b
-	elif len(c) > 2:
-		year = c
+	filteredDateList = list()
 	
-	# Major branch here, did we find the year?
-	if year != None:
-		if ai > 31:
-	else:
-		
+	for possibleDates in dateList:
+		try:
+			datetime.date(
+			filteredDateList.append(
+		except ValueError:
+			continue
+	
+	#dateList0 = [ai,bi,ci]
+	#dateList1 = [bi,ci,ai]
+	#dateList2 = [ci,bi,ai]
+	#dateList3 = [bi,ai,ci]
+	#dateList4 = [ci,ai,bi]
+	#dateList5 = [ai,ci,bi]	
 		
 	#Skip all that do the following:
 	# 1. put all combinations in a map key -> arrayList (there should only be six, look up how to map)
