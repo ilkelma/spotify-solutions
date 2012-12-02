@@ -29,7 +29,8 @@ def parseInput(line):
 	
 	for possibleDates in dateList:
 		try:
-			datetime.date(
+			datetime.date()
+			datetime.date(possibleDates[0], possibleDates[1], possibleDates[2])
 			filteredDateList.append(
 		except ValueError:
 			continue
